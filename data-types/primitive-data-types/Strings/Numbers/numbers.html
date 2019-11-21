@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel" >
+	 function createReceipt (price=0, tax=0, shipping=0) {
+		console.log(
+			`Thank you for shopping with us - here is the receipt for your purchase
+				Price: GBP ${price}
+                Tax: GBP ${tax}
+                Shipping: GBP ${shipping} 
+				Grand Total: GBP ${price + (price * tax) + shipping}		
+		`
+		);
+	};
+createReceipt(10, 0.15, 4.5);
+</script>
+
+	<title>JavaScript Default Parameters</title>
+</head>
+
+<body>
+	<h1>Default Parameters</h1>
+	<p>Price</p>
+	<p>Tax</p>
+	<p>Shipping</p>
+</body>
+
+</html>

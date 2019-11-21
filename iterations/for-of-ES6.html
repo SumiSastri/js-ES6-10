@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+
+for (let letter of "Javascript"){
+    console.log(letter);
+}
+const topics = ["JavaScript", "Node", "React"];
+for (let topic of topics)
+console.log(topics)
+
+let routes = new Map();
+routes.set("Html", "/code/html");
+routes.set("Css", "/code/css");
+routes.set("JavaScript", "/code/javascript");
+routes.set("Node", "/code/nodejs");
+
+for (let route of routes.keys())
+console.log("The course name is", route)
+
+for (let route of routes.values()){
+    console.log("The course route is", route)
+}
+
+for (let topics of routes.entries()){
+    console.log("The course topics and routes are", topics)
+}
+
+</script>
+
+	<title>For-of-ES6</title>
+</head>
+
+<body>
+	<h1>ES-6 For of Loop</h1>
+
+
+	<p></p>
+</body>
+
+</html>

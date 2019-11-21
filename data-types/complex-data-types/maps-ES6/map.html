@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+    
+let courses = new Map();
+courses.set("html", {description: "fe"});
+courses.set("css", {description: "fe"});
+courses.set("javascript", {description: "full-stack"});
+console.log(courses)
+console.log(courses.css)
+console.log(courses.get("css"))
+
+//  can create a map with a nested array as well
+
+let details = new Map([
+[new Date(), 'today'],
+['items', [1,2]]
+])
+console.log(details)
+console.log(details.size)
+
+
+</script>
+
+	<title>ES6-Map</title>
+</head>
+
+<body>
+	<h1>ES-6 Map as a new data type</h1>
+
+
+	<p></p>
+</body>
+
+</html>

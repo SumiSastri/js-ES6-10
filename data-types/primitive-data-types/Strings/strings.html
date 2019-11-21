@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel">
+function createEmail(firstName = 'jane', lastName = 'doe', purchasePrice = 0) {
+	let shipping = 5.95;
+	console.log(
+		`Hi ${firstName} ${lastName}, thanks for buying our gift box!
+		   Total: GBP ${purchasePrice}
+		   Shipping: GBP ${shipping}
+		   Grand Total: GBP ${purchasePrice + shipping}
+   Don't forget to print this receipt!		
+   `
+	);
+}
+createEmail('Ram', 'Narayan', 100);
+</script>
+
+	<title>JavaScript Strings</title>
+</head>
+
+<body>
+	<h1 class="style">ES-6 Strings</h1>
+	<p>Interpolation & Template Literals</p>
+	
+
+	<p></p>
+</body>
+
+</html>
+

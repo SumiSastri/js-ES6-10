@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+	<script type="text/babel" >
+	for (let i =0; i<=45; i++){
+		let div = document.createElement("div");
+		div.onclick = function () {
+			alert(`you clicked on box number ${i}`)
+		};
+		document.getElementsByTagName('section')[0].appendChild(div);
+	}	
+</script>
+ <link rel="stylesheet" href="variables.css">
+	<title>JavaScript BlockScope Variables</title>
+</head>
+
+<body>
+	<h1>Block Scope: Click on a box and find the number</h1>
+<section></section>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+    <script type="text/babel">
+function* spellItOut(array){
+  for (let i=0; i<array.length; i ++){
+      yield array[i];
+  }
+}
+const words = spellItOut(["full", "stack","developer"])
+
+const animateWords = setInterval(function(){
+  const word = words.next();
+  if(word.done){
+      clearInterval(animateWords);
+      console.log("See your word animation in action!");
+  } else{
+      console.log(word.value);
+  }
+},
+1000);
+
+</script>
+	<title>ES6 Generator Functions</title>
+</head>
+
+<body>
+	<h1>ES-6 Generator Functions</h1>
+</body>
+</html>
