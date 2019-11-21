@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+<script type="text/javascript" src="index.js" charset="utf-8" defer></script> 
+<title>Bubbling</title>
+</head>  
+  <body>
+      <h5>JAVASCRIPT EVENT BUBBLING DEMO</h5>
+        <div><p>If you click circle1 (in the console) shows circle1 has been clicked<br> 
+          If you click circle2 or circle3 you will only see circle1 <br>
+         When you click circle2 in the console you will see both circle1 and circle2 clicks<br>
+         When you click circle3 in the console you will see circle3, circle2 & circle1 cliks<br>
+        If you change the innerHTML all three circles only the innerHTML of circle1 is changed<br>
+      </p>
+                 <p>Event bubbling is the way browsers read or parse an event handler<br>
+                    click circle3 div -> click circle2 div -> click circle1 div -> <br>
+                    click body div -> click html root div -> click document object -> window object
+                </p>
+                <p>Further reading<br>
+                <li><a href="https://medium.com/@vsvaibhav2016/event-bubbling-and-event-capturing-in-javascript-6ff38bec30e">Medium Blog</a></li>
+                <li><a href=" https://javascript.info/bubbling-and-capturing">Javascript Info</a></li>           
+                </p>
+            </div>
+            <h6>Click each of the circles to test event bubbling in JavaScript</h6>
+        <hr>     
+    <div id="circle1">
+           <p>circle1 is the parent.</p>           
+      <div id="circle2">
+          <p>circle2: child of circle1, parent of circle3</p>
+        <div id="circle3">
+                <p>circle3: grandchild of circle1, child of circle2</p>
+        </div>
+      </div>
+    </div> 
+    
+  </body>
+</html>
