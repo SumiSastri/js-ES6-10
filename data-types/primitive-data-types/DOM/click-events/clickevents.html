@@ -11,23 +11,30 @@
 </head>
 
 <body>
-  <h5>JAVASCRIPT CLICK EVENTS</h5>
+  <h5>JAVASCRIPT CLICK EVENTS DEMO</h5>
   <div>
-    <p>Click events are added to HTML tags<br>
-      The onclick event handler triggers a call back function<br>
-
+    <p>Click events are added to HTML tags as an attribute, as a string<br>
+      The onclick attribute triggers a call back function<br>
+      These factory functions are written in the JavaScript files<br>
       <p>Further reading<br>
-        <li><a href="">Medium Blog</a></li>
+        <li><a href="https://www.bitdegree.org/learn/onclick-javascript">Bit Degree</a></li>
         <li><a href="http://www.javascriptkit.com/javatutors/event2.shtml">Javascript Kit</a></li>
       </p>
   </div>
-  <h6>Click each of the circles to test event bubbling in JavaScript</h6>
-
-  <div><button id="click" onclick="changeColor()">Click me to change color</button></div>
-
-  <div>
-    <button id="dblclick" onclick="handleDoubleClick()">Click me to change image</button>
+  <hr>
+  <div class="button1">
+    <p>This click event targets a button to change text color</p>
+    <button id="click" onclick="changeColor()">Click me to change color</button>
+  </div>
+  <div class="button2">
+      <p>This click event targets a button & image source attribute</p>
+    <button class="doubleclick" id="dblclick" onclick="handleDoubleClick()">Click me to change image</button>
     <img id="image1" src="https://www.laubwerk.com/wp-content/uploads/2013/02/buynow.png">
+  </div>
+  <div class="copyvalues">  
+      <input value="Field1" id="field1">
+      <p class="clickpara"onclick="copyValues()">Write any text into the input box above & click this paragraph. The text will be copied into the text box below. This click event targets this paragraph and an input value</p>
+      <input value="Field2" id="field2">
   </div>
 
   <button id="mousedown">Mousedown</button>

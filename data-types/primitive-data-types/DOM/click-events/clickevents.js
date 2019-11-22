@@ -16,6 +16,13 @@ function handleDoubleClick() {
 	changeImage.src = 'https://www.listchallenges.com/f/items/aee35b18-b52b-41d6-89bc-39660ce47534.jpg';
 }
 
+const fieldValue1 = document.getElementById('field1');
+const fieldValue2 = document.getElementById('field2');
+function copyValues() {
+	fieldValue2.value = fieldValue1.value;
+	console.log(fieldValue1.value);
+	console.log(fieldValue2.value);
+}
 const mouseDownBtn = document.getElementById('mousedown');
 mouseDownBtn.addEventListener('mousedown', (e) => {
 	console.log('mousedown button clicked');
