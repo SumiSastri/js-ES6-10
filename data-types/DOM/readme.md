@@ -1,8 +1,12 @@
 ## What is the Document Object Model
 
-The DOM is a representation of HTML elements as a tree of JavaScript objects. It is a programming interface for other programs to access HTML and XML documents. It is a API for HTML and XML documents wherby HTML and XML are accessed via nodes and objects. The API allows the JS engine to access HTML elements and add, change, remove or modify them with alogrithms via these nodes using object oriented programming methods of abstraction, encapsulation & polymorphism. The modern DOM is built on mutiple API's, but the DOM itself is not a programming language. JavaScript is also not the only language that has the ability to access the DOM, API's allow Python, for example, also to access the DOM 
+The DOM is a structured representation of the HTML document as a tree of elements and nodes created by the browser in an object-oriented representation.
 
-The JavaScript engine parses (or reads) the DOM-tree starting with the HTML root, traversing the body and all the child elements in order. Each node of the DOM tree is accessed by the JavaScript engine and as the DOM is a tree of JavaScript object, object methods are used to change and modify HTML elements.
+JavaScript engines in browsers parse (or reads) the DOM-tree starting with the HTML root, traversing the body and all the child elements in order. Each node of the DOM tree is accessed by the JavaScript engine. As each element and node is in the form of a JavaScript object, there are certain defined methods that can be used to access and transform each element.
+
+The modern DOM is built on mutiple API's, but the DOM itself is not a programming language. It is a programming interface for other programs to access HTML and XML documents.
+
+Object oriented programming methods of abstraction, encapsulation & polymorphism are used by several languages, not just JavaScript. DOM API's allow Python, for example, also to access the DOM.
 
 Reading List:
 [https://www.w3.org/TR/DOM-Level-2-Core/introduction.html]
