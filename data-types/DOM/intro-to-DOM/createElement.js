@@ -69,8 +69,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	pears.style.margin = '35px';
 	const eur = document.querySelector('li:nth-child(4)');
 	eur.style.margin = '10px';
-	// const dollars = document.querySelector('li:nth-child(5)');
-	// dollars.style.margin = '10px';
+	const dollars = document.querySelector('li:nth-child(5)');
+	dollars.style.margin = '10px';
 	const pounds = document.querySelector('li:nth-child(6)');
 	pounds.style.margin = '10px';
 
