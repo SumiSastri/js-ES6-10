@@ -1,0 +1,32 @@
+p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+}
+.container-1,
+.container-2 {
+	display: flex;
+}
+
+#mouseup,
+#mousedown {
+	font-family: 'Open Sans Condensed', sans-serif;
+	height: 150px;
+	width: 100px;
+	padding: 1em;
+	margin: 1em;
+	font-size: 14px;
+	background-color: lightgoldenrodyellow;
+	outline: none;
+}
+
+#mouse-enter,
+#mouse-leave {
+	font-family: 'Open Sans Condensed', sans-serif;
+	height: 150px;
+	width: 475px;
+	padding: 1em;
+	margin: 1em;
+	font-size: 14px;
+	background-color: lightskyblue;
+	outline: none;
+}

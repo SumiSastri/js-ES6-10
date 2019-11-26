@@ -61,11 +61,10 @@ As these are not hoisted, caching the DOM and declaring them as variables is the
 ```
 ## What are JavaScript Events and how do they work with the DOM?
 
-Events are notifications to the code base to do something based on user interaction. Baked into the window object are event listeners. Events can only be called once all the other functions in the execution stack have been called.
+Events are notifications to the code base to do something based on user interaction. They are call back-functions and are called only once all the other functions in the execution stack have been called.
+Multiple events can be fired at the same time due to the asynchronous, single-threaded nature of JavaScript.
 
-Events therefore are callback functions and part of the asynchronous, single-threaded nature of JavaScript.
-
- Message queue is where the event listeners are queued and wait for an event to occur. An event occurs when the user interacts with the UI and then the event listener methods are called.
+The call stack or message queue, is where the event listeners are queued, waiting for an event to occur. An event occurs when the user interacts with the UI and then the event listener methods are called.
 
 Event methods take 2 arguments - the event type (click, mouseover, scroll down, type key etc.,) - the call back function which executes actions based on the event type.
 
@@ -80,8 +79,12 @@ function changeColor() {
 }
 ```
 ## What is JavaScript event bubbling?
+
 The event flow in the DOM is from parent to child. Therefore when a parent element has a handler all the children inherit the event and data flow is top downwards. The child elements have no influence on the parent element.
 
 This leads to event bubbling when an event is fired in the DOM.  If you click event listener on an element this event will be fired all the way up the tree to the parent and grandparent element.  
 
 In order to prevent this we can use e.stopPropagation() at any point in the DOM tree. Event bubbling is also halted when you specify the event's target and value by using the document object methods that call the API keys of the DOM. 
+
+## Types of events?
+- Clickevents: one of the most common type of events where functions are written to change the behaviour of an element, or elements, when the user clicks a button, link, area of the screen.

@@ -6,7 +6,7 @@ History of JavaScript a long and detailed read[https://auth0.com/blog/a-brief-hi
 
 ## What is JavaScript
 
-"JavaScript" is a trademark of Oracle Corporation in the United States. It is used under licenseby Mozilla and in JS-engines in browsers - V8 (Google), Chakra(Microsoft), SpiderMonkey(Firefox). JavaScript is officially managed by Mozilla Foundation, and new language features are added periodically. However, only some JavaScript engines support these new features.
+"JavaScript" is a trademark of Oracle Corporation in the United States. It is used under licenseby Mozilla and in JS-engines in browsers - V8(Google), Chakra(Microsoft), SpiderMonkey(Firefox). JavaScript is officially managed by Mozilla Foundation, and new language features are added periodically. However, only some JavaScript engines support these new features.
 
 As a programming language, JavaScript is a dynamic and loosely typed script. It is read (parsed) by JavaScript engines in browsers and node modules in the backend. It needs a hosting environment as it is DOM and Node dependent. JavaScript has no concept of input or output. To enforce structure on JavaScript, Typescript, a JavaScript superscript defines types as inputs or outputs.
 
@@ -16,7 +16,9 @@ Known as JS as well as Vanilla JavaScript - refering to JS without frameworks or
 
 JavaScript is almost entirely object-based. In JavaScript, an object is an associative array, augmented with a prototype using classes & constructors for inheritance of the values, properties and methods associated with the class.
 
-JavaScript uses prototypes where other programming languages use classes. Classes were introduced in ES5.
+JavaScript uses prototypes where other programming languages use classes. Classes were introduced in ES5. This allows libraries like React to use class-based components, based on the Model-View-Control process which is different from DOM-based manipulation of HTML files.
+
+A model of the DOM, or the virtual-DOM is created. 
 
 More on Wikipedia [https://en.wikipedia.org/wiki/JavaScript]
 

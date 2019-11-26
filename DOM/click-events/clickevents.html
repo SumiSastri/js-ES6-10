@@ -20,27 +20,42 @@
         <li><a href="https://www.bitdegree.org/learn/onclick-javascript">Bit Degree</a></li>
         <li><a href="http://www.javascriptkit.com/javatutors/event2.shtml">Javascript Kit</a></li>
       </p>
+      <div id="output"></div>
   </div>
   <hr>
+
+  <div class="container-1">
   <div class="button1">
-    <p>This click event targets a button to change text color</p>
-    <button id="click" onclick="changeColor()">Click me to change color</button>
+    <p>This click event targets a button, changes text color on the button, prints the event in the element created above the box</p>
+    <button class="change-to-red" id="click" onclick="changeColor()">Click me to change color</button>
   </div>
+  <div> 
+    <button id="mouseup">Mouseup</button>
+</div>
+<div> 
+    <button id="mouse-enter">Mouse-Enter logs every time you enter the box, leave the box and enter the box again</button>
+</div>
+</div>
+
+<div class= "container-2">
   <div class="button2">
-      <p>This click event targets a button & image source attribute</p>
+      <p>This double click event targets a button & image source attribute. Double click and check console</p>
     <button class="doubleclick" id="dblclick" onclick="handleDoubleClick()">Click me to change image</button>
     <img id="image1" src="https://www.laubwerk.com/wp-content/uploads/2013/02/buynow.png">
   </div>
-  <div class="copyvalues">  
+  <div>
+      <button id="mousedown">Mousedown</button>
+  </div>
+  <div> 
+      <button id="mouse-leave">Mouse-leave logs every time you leave the box after you enter the box, when you re-enter the box, it logs when you leave again</button>
+  </div>
+
+</div>
+  
+<div class="copyvalues">  
       <input value="Field1" id="field1">
       <p class="clickpara"onclick="copyValues()">Write any text into the input box above & click this paragraph. The text will be copied into the text box below. This click event targets this paragraph and an input value</p>
       <input value="Field2" id="field2">
   </div>
-
-  <button id="mousedown">Mousedown</button>
-  <button id="mouseup">Mouseup</button>
-
- 
 </body>
-
 </html>
