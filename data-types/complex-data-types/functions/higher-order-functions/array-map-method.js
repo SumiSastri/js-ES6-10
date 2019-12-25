@@ -1,16 +1,18 @@
-// array.map()
-// Array.prototype.map()
+//  all instances of map inherit from map.prototype
+//  all instances of array inherit from array.prototype
+
 
 // WHAT IT DOES
-// iterates through original (parent) array
-// performs a specific function on each item of parent 
-// returns new array (child) with function performed on each item
+// iterates through original (parent) array in its insertion order of keys and values
+// performs a specific function on each value of the array iterating through the keys in order
+// returns new array (child) with function performed on each key-value pair
 // retains the items of the parent array
+// If you obtain the keys of an object, map function can be performed iterating through the keys in order
 
 // DOCUMENTATION
-// W3 schools 
+// W3 schools [https://www.w3schools.com/jsref/jsref_map.asp]
 array.map(function(currentValue, index, arr), thisValue)
-// MDN
+// MDN [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map]
 var new_array = arr.map(function callback(currentValue[, index[, array]]) {
  }[, thisArg])
 // Return element for new_array
@@ -167,3 +169,59 @@ __proto__: Array(0)
 // ADDITIONAL READING
 // http://matthewodette.com/map-filter-and-fold-in-javascript
 // https://scotch.io/tutorials/4-uses-of-javascripts-arraymap-you-should-know)
+
+
+// declare all variables in the beginning
+// white, grey, black
+// iterate over collection, change colors and push into new array
+
+let transformedColors =[];
+let transformColors = []
+let colors = [
+{r: 255, g: 255, b:255},
+{r: 128, g:128, b: 128},
+{r: 0, g:0, b:0},
+]
+
+for (let i =0; i <colors.length; i++){
+	transformColors ={
+		r: Math.round(colors[i].r/2),
+		g: Math.round(colors[i].g/2),
+		b: Math.round(colors[i].b/2)
+	}
+	transformedColors.push(transformColors);
+}
+console.log(transformedColors)
+
+// with map function - reduces run time
+
+let colors = [
+{r: 255, g: 255, b:255},
+{r: 128, g:128, b: 128},
+{r: 0, g:0, b:0},
+]
+const transformedColors = colors.map(function(transformColor){
+	return {
+		r: Math.round(transformColor.r/2),
+		g: Math.round(transformColor.g/2),
+		b: Math.round(transformColor.b/2)
+	};
+});
+
+console.log(transformedColors)
+
+// with arrow functions
+let colors = [
+{r: 255, g: 255, b:255},
+{r: 128, g:128, b: 128},
+{r: 0, g:0, b:0},
+]
+const transformedColors = colors.map(transformColor => {
+	return {
+	r: Math.round(transformColor.r/2),
+	g: Math.round(transformColor.g/2),
+	b: Math.round(transformColor.b/2)
+	};
+});
+
+console.log(transformedColors)

@@ -49,3 +49,15 @@ Do Factory [https://www.dofactory.com/tutorial/what-is-javascript]
 
 The European Computer Manufacturers Association or ECMA update and standardize JavaScript introducing new features that are cross-browser friendly. ES-5 is the last version of JavaScript that is cross-browser friendly. The new features from ES-6 onwards need Babel and other libraries to transpile code into ES-5.
 
+
+## Front-end libraries
+
+- Jquery - was relevant up to 2018, but with ES-6 to ES-10 the changes in JavaScript have made the key things that Jquery was useful for - DOM manipulation, in particular - possible with vanilla JavaScript
+
+Axios and the Fetch API have made data calls easier compared to Ajax calls. 
+
+React has taken DOM manipulation further with jsx, while there are legacy systems that depend on Jquery, many are migrating to either Vue or React.
+
+- React
+- Vue
+

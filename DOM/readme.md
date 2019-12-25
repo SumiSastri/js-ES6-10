@@ -1,6 +1,6 @@
 ## What is the Document Object Model
 
-The DOM is a structured representation of the HTML document as a tree of elements and nodes created by the browser in an object-oriented representation.
+The DOM is a structured representation of the HTML document as a tree of elements and nodes created by the browser in an object-oriented representation. The document is the HTML document, the model is the node model of all the elements in the HTML document, and the object is the conversion of each of these elements into JavaScript objects.
 
 JavaScript engines in browsers parse (or reads) the DOM-tree starting with the HTML root, traversing the body and all the child elements in order. Each node of the DOM tree is accessed by the JavaScript engine. As each element and node is in the form of a JavaScript object, there are certain defined methods that can be used to access and transform each element.
 
@@ -16,7 +16,7 @@ Reading List:
 
 ## How does JavaScript work with the DOM?
 
-The parent object of the DOM is the window object, followed by the document object. 
+The parent object of the DOM is the window object, followed by the document object, with is an object oriented representation of the HTML elements. 
 
 1. Access of the element & node: To access HTML elements, the DOM document has certain key methods.
 

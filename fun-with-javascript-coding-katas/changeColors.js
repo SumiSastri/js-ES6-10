@@ -41,7 +41,7 @@ console.log(transformedColors)
 let colors = [
 {r: 255, g: 255, b:255},
 {r: 128, g:128, b: 128},
-{r: 0, g:0, b:0},
+{r: 0, g:0, b:0}
 ]
 const transformedColors = colors.map(transformColor => {
 	return {
