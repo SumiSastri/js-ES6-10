@@ -9,9 +9,9 @@ function wordGame (noun, adjective, verb, adverb){
 console.log(wordGame())
 
 // functions, numbers local scope
-function add (number1, number 2) {
+function add (number1, number2) {
 	var number1 = a;
-	var number 2= b;
+	var number2 = b;
 	return a+b
 }
 add(5, 6)
@@ -20,7 +20,7 @@ add(5, 6)
 // It is not exclusive to the function it is written in
 // the scope of the  variables become global if you do not use a var, const or let
 
-function add (number1, number 2) {
+function add (number1, number2) {
 	number1 = a;
 	number2 = b;
 	return a+b
@@ -82,7 +82,8 @@ times5 (5, 6)
 var a = b 
 //an assignment of variable a to b
 
-var a === b is a strict equality 
+var a === b 
+// is a strict equality 
 // a has to be a number and b has to be a number
 
 var a == b

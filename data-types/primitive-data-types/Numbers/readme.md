@@ -3,8 +3,7 @@
 Documentation[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number]
 
 ### What are numbers?
-Numbers are a primitive data type in JavaScript. They are usually held in variables. Simple arithmetic operators like ```+ - * /``` refer to plus, minus, multiply and divide. Modulus or remainder ```%```
-is represented by the percentage symbol.
+Numbers are a primitive data type in JavaScript. They are usually held in variables. Simple arithmetic operators like ```+ - * /``` refer to plus, minus, multiply and divide. Modulus or remainder ```%``` is represented by the percentage symbol.
 
 ### Not a Number or NaN
 

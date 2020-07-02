@@ -1,6 +1,9 @@
 ### Booleans
 
-In programming languages you need a data type that will take only one of 2 answers - yes or no/ true or false / on or off. A great video on booleans [https://scrimba.com/p/pPPeCy/caJVKfv]
+In programming languages you need a data type that will take only one of 2 answers - yes or no/ true or false / on or off. 
+
+A great video on booleans [https://scrimba.com/p/pPPeCy/caJVKfv]
+
 These help execute functions in programming. Everything with a value returns true.
 There are certain default boolean values - anything without a value returns false. 
 
