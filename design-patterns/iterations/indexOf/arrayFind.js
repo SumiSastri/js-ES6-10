@@ -1,42 +1,4 @@
-// Most find methods are looking for the array key, value or both
-// and use the values, keys iterators as params
-// array.indexOf()
-// Array.prototype.indexOf()
-
-// returns index of first instance of the value
-// returns -1 if it is not present (not a call back)
-var beasts = [ 'ant', 'bison', 'camel', 'duck', 'bison' ];
-console.log(beasts.indexOf('bison'));
-// Output - 1
-console.log(beasts.indexOf('bison', 2));
-// start from index 2
-// expected output: 4
-console.log(beasts.indexOf('giraffe'));
-// expected output: -1
-
-// array.lastIndexOf()
-// Array.prototype.lastIndexOf()
-
-// ditto above in reverse
-// returns index of last instance of the value
-// returns -1 if it is not present (not a call back)
-
-console.log(beasts.lastIndexOf('bison'));
-// expected output: 4
-console.log(beasts.lastIndexOf('giraffe'));
-// expected output: -1
-console.log(beasts.lastIndexOf('bison', 4));
-// start from index 4
-// output: 4
-console.log(beasts.lastIndexOf('bison', 2));
-// start from index 2
-// output 2
-
-// CALL BACKS
-
-// array.find()
-// Array.prototype.find()
-
+// EXAMPLES
 // call back function return only strings with "blueberries"
 var fruitArray = [ 'Apples', 'Oranges', 'Blueberries', 'Kiwi', 'Mangoes', 'Pineapples', 'Grapes' ];
 var findBlueberries = fruitArray.find(function(fruit) {
@@ -45,14 +7,52 @@ var findBlueberries = fruitArray.find(function(fruit) {
 console.log(findBlueberries);
 // Output "blueberries" the string
 
-// array.findIndex()
-// Array.prototype.findIndex()
+// NESTED OBJECTS IN ARRAYS
+var musicCatalog = [
+	{
+		genre: 'hip-hop',
+		language: 'french',
+		artists: [ 'maitre-gims', "sexion-d'assaut", 'tsr-crew', 'flavien-berger' ],
+		onSpotify: false,
+		priceOfDownload: 50
+	},
 
-// call back function return only the index of "blueberries"
-// array.findIndex(function(currentValue, index, arr), thisValue)
-// arr.findIndex(callback(element[, index[, array]])[, thisArg])
+	{
+		genre: 'rap',
+		language: 'english',
+		artists: [ 'woo-tang-warriors', 'puff-daddy', 'beastie-boys' ],
+		onSpotify: false,
+		priceOfDownload: 80
+	},
+	{
+		genre: 'k-pop',
+		language: 'korean',
+		artists: [ 'black-pink', 'psy', 'bgt' ],
+		onSpotify: true,
+		priceOfDownload: 95
+	},
+	{
+		genre: 'solo-pop',
+		language: 'english',
+		artists: [ 'pink', 'cindy-lauper', 'madonna' ],
+		onSpotify: false,
+		priceOfDownload: 100
+	}
+];
+// string value
+var findk_pop = musicCatalog.find((genre) => {
+	return genre.genre === 'k-pop';
+});
+console.log(findk_pop);
 
-var fruitArray = [ 'Apples', 'Oranges', 'Blueberries', 'Kiwi', 'Mangoes', 'Pineapples', 'Grapes' ];
-const findBluberriesIndex = fruitArray.findIndex((fruit) => fruit === 'Blueberries');
-console.log(findBlueberriesIndex);
-// Output =[2] which is the index
+// number value
+var findLowDownloadPrices = musicCatalog.find((price) => {
+	return price.priceOfDownload <= 80;
+});
+console.log(findLowDownloadPrices);
+
+// boolean value - finds only the first not all
+var findBySpotify = musicCatalog.find((onSpotify) => {
+	return onSpotify.onSpotify === false;
+});
+console.log(findBySpotify);

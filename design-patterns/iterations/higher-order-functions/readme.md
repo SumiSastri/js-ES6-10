@@ -115,6 +115,10 @@ Steps to create the filter method is exactly the same but the output is differen
 [http://matthewodette.com/map-filter-and-fold-in-javascript]
 [https://scotch.io/tutorials/4-uses-of-javascripts-arraymap-you-should-know]
 
+Tutorials
+Webdev Simplified:
+[https://www.youtube.com/watch?v=R8rmfD9Y5-c]
+
 ### DOCUMENTATION
 
 W3 schools [https://www.w3schools.com/jsref/jsref_map.asp]
