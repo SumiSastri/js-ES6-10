@@ -1,27 +1,45 @@
-// https://medium.com/@zaid.naom/exploring-folds-a-powerful-pattern-of-functional-programming-3036974205c8
+var numbers = [ 1, 2, 3, 4 ];
+var sum = 0;
+for (var n of numbers) sum = sum + n;
+sum += n;
+console.log(sum);
 
-// WHAT IT DOES
+var addAll = numbers.reduce((accumulator, currentValueOfElement) => {
+	return accumulator + currentValueOfElement;
+}, 10);
 
+const prices = [ 18, 19, 20, 21, 60, 61, 62 ];
+let pricesSum = 0;
+for (let i = 0; i <= 60; i++) {
+	pricesSum += prices[i];
+}
+console.log(pricesSum);
+console.log(prices);
 
-// DOCUMENTATION
+const prices = [ 18, 19, 20, 21, 60, 61, 62 ];
+let pricesSum = 0;
+for (let i = 0; i < prices.length; i++) {
+	pricesSum += prices[i];
+}
+console.log(pricesSum);
 
-// W3 schools 
+const newPriceSum = prices.reduce((sum, elementValue) => (sum += elementValue), 10);
+console.log(newPriceSum);
 
-// MDN
-// reduce(callback[, initialValue]) applies callback(accumulator, currentValue[, currentIndex, array]) for each value in the array for the purpose of reducing the list of items down to a single value.  The reduce function returns the final value returned by the callback function.  If an initialValue is specified the callback is called with the initial value as the first parameter value and the value of the first item in the array as the second parameter value.  On the initial call if no initialValue is specified then the first two parameter values will be the first and second elements of the array.  On every subsequent call the first parameter's value will be whatever the callback returned on the previous call and the second parameter's value will be the next value in the array.
+const companies = [
+	{ name: 'Company One', category: 'Finance', start: 1981, end: 2003 },
+	{ name: 'Company Two', category: 'Retail', start: 1992, end: 2008 },
+	{ name: 'Company Three', category: 'Auto', start: 1999, end: 2007 },
+	{ name: 'Company Four', category: 'Retail', start: 1989, end: 2010 },
+	{ name: 'Company Five', category: 'Technology', start: 2009, end: 2014 },
+	{ name: 'Company Six', category: 'Finance', start: 1987, end: 2010 },
+	{ name: 'Company Seven', category: 'Auto', start: 1986, end: 1996 },
+	{ name: 'Company Eight', category: 'Technology', start: 2011, end: 2016 },
+	{ name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 }
+];
 
-// If the callback function needs access to the index of the item being operated on or the entire array they are available as optional parameters.
-
-
-
-
-// EXAMPLES
-
-// WRITTEN WITH A FOR LOOP
-
-
-// ADDITIONAL READING
-// http://matthewodette.com/map-filter-and-fold-in-javascript
-// https://scotch.io/tutorials/4-uses-of-javascripts-arraymap-you-should-know)
-
-
+const totalYears = companies.reduce(
+	(cumulativeValue, elementValue) => cumulativeValue + (elementValue.end - elementValue.start),
+	10
+);
+console.log(totalYears);

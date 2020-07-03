@@ -1,5 +1,19 @@
 ### Higher Order Functions In JavaScript
 
+The four methods chained and compared
+
+```
+const setAges = [ 18, 19, 20, 21, 60, 61, 62 ];
+const setCombinedAges = setAges
+	.map((elementValue) => elementValue * 3)
+	<!-- acts on every element map output [54, 57, 60, 63, 180, 183, 186] -->
+	.sort((a, b) => b - a)
+	<!-- looks at first and last element and sorts in ascending or descending order the log is in descending order sort output [[186, 183, 180, 63, 60, 57, 54]] -->
+	.filter((elementValue) => elementValue >= 60)
+	<!-- performs a boolean evaluation filter output  [60, 63, 180, 183, 186]-->
+	.reduce((cumulativeAges, elementValue) => cumulativeAges + elementValue);
+	<!-- produces a single cumulative value reduce output 672 -->
+```
 ### What does the map method do?
 ```array.map()``` or ```Array.prototype.map()``` is a callback function thatiterates through original (parent) array in its insertion order of keys and values. The call back function logic is performed on each value of the array iterating through the keys in order. The method
 returns new array (child) with the function body performed on each key-value pair. It
@@ -110,14 +124,90 @@ Steps to create the filter method is exactly the same but the output is differen
 - write the function  logic in the function body of the call back
 - call the function by the variable of the child array
 
+### What does the reduce method do?
+The sort method takes 2 arguments, the start and end index usually described as a & b. The array then is organised in ascending or descending order.
+
+```
+const setAges = [ 18, 19, 20, 21, 60, 61, 62 ];
+<!-- acending-->
+const sortAges = ages.sort((a, b) => {
+	a - b;
+});
+<!-- decending -->
+const sortAges = ages.sort((a, b) => {
+	b - a;
+});
+```
+This is a little more complex with an object. Written as a forLoop the method that organises a company by its start date in ascending order looks like so:-
+
+```
+const sortCompanies = companies.sort(function(company1, company2) {
+	if (company1.start > company2.start) {
+		return 1;
+	} else {
+		return -1;
+	}
+});
+```
+With ES6 this is foreshortened with an arrow function and a ternery operator
+
+```
+const sortCompanies = companies.sort((a, b) => {
+	a.start > b.start ? 1 : -1;
+});
+console.log(sortCompanies);
+
+```
+
+### What does the reduce method do?
+The reducer method takes 2 arguments, an accumulator and the current value of the element it is looping over. The accumulator adds the last element looped over to the value of the next element - this could be a number, string - the type does not matter.
+
+For each value in the array for the purpose of reducing the list of items down to a single value.  The reduce function returns the final value returned by the callback function.  If an initialValue is specified the callback is called with the initial value as the first parameter value and the value of the first item in the array as the second parameter value.  On the initial call if no initialValue is specified then the first two parameter values will be the first and second elements of the array.  On every subsequent call the first parameter's value will be whatever the callback returned on the previous call and the second parameter's value will be the next value in the array.
+
+If the callback function needs access to the index of the item being operated on or the entire array they are available as optional parameters.
+### SYNTAX
+```reduce(callback[, initialValue]) applies callback(accumulator, currentValue[, currentIndex, array])```
+ 
+
+```
+var sum = 0;
+for (var n of numbers) sum = sum + n;
+sum += n;
+console.log(sum);
+```
+ES6 way to write the same code
+```
+var addAll = numbers.reduce((accumulator, currentValueOfElement) => {
+	return accumulator + currentValueOfElement;
+}, 10);
+```
+
+You can also write a forLoop and change it
+```
+const prices = [ 18, 19, 20, 21, 60, 61, 62 ];
+let pricesSum = 0;
+for (let i = 0; i < prices.length; i++) {
+	pricesSum += prices[i];
+}
+console.log(pricesSum);
+
+const newPriceSum = prices.reduce((newCumulativeValue, elementValue) => (newCumulativeValue += elementValue), 10);
+console.log(newPriceSum);
+```
+
 
 ### ADDITIONAL READING
 [http://matthewodette.com/map-filter-and-fold-in-javascript]
 [https://scotch.io/tutorials/4-uses-of-javascripts-arraymap-you-should-know]
+[https://medium.com/@zaid.naom/exploring-folds-a-powerful-pattern-of-functional-programming-3036974205c8]
 
 Tutorials
 Webdev Simplified:
 [https://www.youtube.com/watch?v=R8rmfD9Y5-c]
+Traversy Media: 
+[https://www.youtube.com/watch?v=rRgD1yVwIvE]
+Mosh
+[https://www.youtube.com/watch?v=g1C40tDP0Bk]
 
 ### DOCUMENTATION
 
