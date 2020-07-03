@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+
+let details = new Map([
+[new Date(), 'today'],
+['items', [1,2]]
+])
+console.log(details)
+console.log(details.size)
+
+details.forEach(function (item){
+    console.log(item)
+})
+
+let numbers = [1, 2, 3, 4];
+numbers.forEach(updateNumbers)
+function updateNumbers(currentValue, i, numbers) {
+  return numbers[i] = currentValue * 10;
+}
+console.log(numbers)
+document.getElementById("demo-numbers").innerHTML = numbers;
+
+let firstNames =["Anna", "Annaiah", "Anastasi"]
+function addGreeting(currentValue, i, firstNames){
+	return firstNames[i] = currentValue.toUpperCase() + ` hi!`
+}
+firstNames.forEach(addGreeting)
+console.log(firstNames)
+document.getElementById("demo-strings").innerHTML =firstNames;
+
+// LOOPING THROUGH AN ARRAY
+// where every item will be printed
+
+// with boolean logic and a for-loop
+var colors = [ 'red', 'green', 'blue' ];
+for (var i = 0; i < colors.length; i++) {
+	console.log(colors[i]);
+}
+
+// with the forEach() method
+// it is called a method, because an array is an object prototype
+// array.ForEach(function (param){call-back})
+var colors = [ 'red', 'green', 'blue' ];
+colors.forEach(function(color) {
+	console.log(color);
+});
+
+</script>
+	<title>ForEach</title>
+</head>
+
+<body>
+	<h1>ES-6 forEach</h1>
+<p>Syntax: array.forEach(callbackFunction(element, index, array), thisValue){return function body with logic}</p>
+<p>Call the function array.forEach(callbackFunctionName)</p>	
+<p> the value of <em>this</em> the second param in the callback is optional</p>
+	<hr>
+	<p>Example of how this syntax is written out with an example</p>
+	<li>let numbers = [1, 2, 3, 4];</li>
+	<li>function updateNumbers(elementValue, i, numbers) {
+		return numbers[i] = elementValue * 10;
+	  }</li>
+	  <li>numbers.forEach(updateNumbers)</li>
+	  <p>The function is passed by reference and called as a param of the <em>forEach</em> method </p> 
+		<h5>Demo with numbers</h5>
+	<p id="demo-numbers"></p>
+	<h5>Demo with strings - adding a greeting to the array and an array method changing names to uppercase</h5>
+	<p id="demo-strings"></p>
+	<p>The <em>forEach</em>causes some side-effects, it is better to use the <em>array.map()</em>method. A good article to read <a target="#" href="https://dmitripavlutin.com/foreach-iterate-array-javascript/"></a> </p>
+</body>
+
+</html>

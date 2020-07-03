@@ -59,5 +59,5 @@ Axios and the Fetch API have made data calls easier compared to Ajax calls.
 React has taken DOM manipulation further with jsx, while there are legacy systems that depend on Jquery, many are migrating to either Vue or React.
 
 - React
-- Vue
-
+- Vues
+CSS for JS - Emotion, Styled Components, Material UI, Bootstrap, ReactStrap, Tachyons

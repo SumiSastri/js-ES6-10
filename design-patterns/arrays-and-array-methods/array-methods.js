@@ -120,20 +120,3 @@ array.reverse();
 var fruitArray = [ 'Apples', 'Oranges', 'Blueberries', 'Kiwi', 'Mangoes', 'Pineapples', 'Grapes' ];
 fruitArray.push('Apples', 'Oranges', 'Blueberries', 'Kiwi');
 fuitArray.pop('kiwi');
-
-// LOOPING THROUGH AN ARRAY
-// where every item will be printed
-
-// with boolean logic and a for-loop
-var colors = [ 'red', 'green', 'blue' ];
-for (var i = 0; i < colors.length; i++) {
-	console.log(colors[i]);
-}
-
-// with the forEach() method
-// it is called a method, because an array is an object prototype
-// array.ForEach(function (param){call-back})
-var colors = [ 'red', 'green', 'blue' ];
-colors.forEach(function(color) {
-	console.log(color);
-});

@@ -6,7 +6,7 @@
 	<script type="text/babel">
 function createEmail(firstName = 'jane', lastName = 'doe', purchasePrice = 0) {
 	let shipping = 5.95;
-	console.log(
+	console.log (
 		`Hi ${firstName} ${lastName}, thanks for buying our gift box!
 		   Total: GBP ${purchasePrice}
 		   Shipping: GBP ${shipping}
@@ -23,11 +23,19 @@ createEmail('Ram', 'Narayan', 100);
 
 <body>
 	<h1 class="style">ES-6 Strings</h1>
-	<p>Interpolation & Template Literals</p>
+	<h5>Open console for demo of interpolation & template literals</h5>
+	<p>A string is a primitive data-type in JavaScript. They are held in single or double quotes.  Strings values can hold text, letters, numbers, symbols, punctuation,emojis - so long as they are in quotes JavaScript will recognise the value in quotes as a string type.
+
+		String literals are immutable i.e they can't be altered once created. 
+		<p>
+		A string is also JavaScript constructor method. Under-the-hood, it is an object with its own inbuilt methods or functions. 
+		
+		This can create confusion as the type of a string literal <em>"Hello world" </em>is not identical to the type of the String object <em>new String('Hello world')</em>. This sometimes enforces unnecessary and confusing typechecks. Typescript was created as a JavaScript superscript to enforce these type checks.
+	</p>
+		String literals behave like an array held within quotes and thefore are iterable and several array methods can be used.</p>
 	
 
-	<p></p>
+	<p>Template literals allow you to use backticks to print strings. The dollar and curly braces help you turn a javascript argument into a string.</p>
 </body>
 
 </html>
-

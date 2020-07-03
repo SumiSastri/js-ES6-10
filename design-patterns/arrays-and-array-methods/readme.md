@@ -65,20 +65,6 @@ let myArray = [ 6, 15, 30, 40 ];
 let arrayData = myArray[(0, 2)];
 console.log(arrayData);
 ```
-### Iterations, Loops & functions with arrays
-
-As Arrays are iterable, other than the built-in methods of the Array constructor, custom or factory functions can be written to loop through the array.
-
-Intialise the array and give it some values - the keys are embedded in the id symbol or i, write your custom function, which can also use the inbuilt Array constructor methods.
-
-```
-var array =[1,2,3,4,5]
-
-function nextInNumber (array, number) {
-	return array.push(6)
-}
-```
-
 MDN quick reference [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype]
 w3 quick reference [https://www.w3schools.com/jsref/jsref_obj_array.asp]
 Another useful reference [https://www.dyn-web.com/javascript/arrays/]

@@ -1,3 +1,23 @@
+## What are functions?
+
+Functions are objects with logic in the function body. In JavaScript everything is an object including functions and arrays.
+
+Functions are anonymous or named. A named function is used in ES6 with the fat-arrow syntax.
+```variable functionName = (params) => {function body}```
+
+Callbacks are functions that return functions.
+```variable functionName = (callbackFunction(params) => {function body})```
+
+Promises execute functions in specific steps
+
+``` 
+variable functionName =(() => {
+    function body
+    .then(do something)
+    .throw (throw and error)
+    .catch((catch an error))
+})
+```
 
 ## ES-6 call-backs vs. Promises
 A call back is executed when one function calls another function. Map,filter and reduce are call-back functions. There is a synchronous nested functionality where one code block has to run before the other can be executed and can lead to what was known as "call-back-hell" or "the pyramid-of-doom". It was also dependent on several conditional statements

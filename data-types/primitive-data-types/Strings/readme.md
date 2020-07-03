@@ -7,7 +7,7 @@ A string is a primitive data-type in JavaScript. They are held in single or doub
 
 String literals are immutable or can't be altered once created. 
 
-A string is also JavaScript constructor method. a Under-the-hood, it is an object with its own inbuilt methods or functions. 
+A string is also JavaScript constructor method. Under-the-hood, it is an object with its own inbuilt methods or functions. 
 
 This can create confusion as the type of a string literal ```"Hello world"``` is not identical to the type of the String object ```new String('Hello world')```. This sometimes enforces unnecessary and confusing typechecks. Typescript was created as a JavaScript superscript to enforce these type checks.
 
