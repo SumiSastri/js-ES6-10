@@ -101,4 +101,4 @@ var filterBySpotify = musicCatalog.filter((onSpotify) => {
 });
 console.log(filterBySpotify);
 
-//  what conditions can you put on a nested array to filter? Research a bit more
+//  what conditions can you put on a nested array to filter? Research a bit

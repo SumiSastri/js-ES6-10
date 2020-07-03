@@ -1,7 +1,3 @@
-// ECMA-6
-var colors = [ 'red', 'green', 'blue' ];
-colors.forEach((color) => console.log(color));
-
 // SEARCHING THROUGH ITEMS IN AN ARRAY
 
 indexOf();
