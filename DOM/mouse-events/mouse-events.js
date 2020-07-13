@@ -22,6 +22,7 @@ const mouseLeave = document.getElementById('mouse-leave');
 mouseLeave.addEventListener('mouseleave', runEvent);
 mouseLeave.addEventListener('mouseout', runEvent);
 mouseLeave.addEventListener('mousmove', runEvent);
+
 function runEvent(e) {
 	console.log('EVENT TYPE: ' + e.type);
 	// output.innerHTML = '<h3>MouseX: ' + e.offsetX + '</h3><h3>MouseY: ' + e.offsetY + '</h3>';

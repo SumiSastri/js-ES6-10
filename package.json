@@ -1,0 +1,25 @@
+{
+	"name": "js-ES6-10",
+	"version": "1.0.0",
+	"description": "Created by Brenden Eich in 1996, JavaScript was written for Netscape under the name Mocha, then changed to  \"LiveScript\". Microsoft renamed LiveScript for Explorer calling it JScript, or JavaScript. Standardising JavaScript fell to the hands of ECMA and JavaScript is also known as ECMA Script or ES5, ES6, ES7, ES8 and ES9 which are are updated versions of JavaScript.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SumiSastri/js-ES6-10.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/SumiSastri/js-ES6-10/issues"
+	},
+	"homepage": "https://github.com/SumiSastri/js-ES6-10#readme",
+	"dependencies": {
+		"@babel/core": "^7.10.4",
+		"@babel/node": "^7.10.4",
+		"@babel/preset-env": "^7.10.4"
+	}
+}

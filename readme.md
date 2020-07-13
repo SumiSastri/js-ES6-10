@@ -32,6 +32,9 @@ This repo explores different data-types and their use in JavaScript
 - Objects
    - Functions
    - Classes & Constructors
+- Concepts such as Functional Programming vs. Object Oriented Programming
+- JavaScript Design Patterns
+- DOM manipulation & API calls
 
 Useful Links:
 
@@ -59,5 +62,11 @@ Axios and the Fetch API have made data calls easier compared to Ajax calls.
 React has taken DOM manipulation further with jsx, while there are legacy systems that depend on Jquery, many are migrating to either Vue or React.
 
 - React
-- Vues
-CSS for JS - Emotion, Styled Components, Material UI, Bootstrap, ReactStrap, Tachyons
+- Vue
+- CSS for JS - Emotion, Styled Components, Material UI, Bootstrap, ReactStrap, Tachyons
+
+## End-to-end JavaScript
+- Node.js/ npm (node-package-manager) -y/ nvm (node-version-manager)
+- Babel transpilers 
+- Express.js
+- Mongoose.js (ORM) for MongoDb
