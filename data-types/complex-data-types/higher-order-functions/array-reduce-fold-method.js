@@ -1,30 +1,38 @@
-var numbers = [ 1, 2, 3, 4 ];
+// Reduce iterates every element, cumulatively performs the logic to each element & returns ONE CUMULATIVE VALUE
+var numbers = [ 1, 5, 7, 12, 10, 2, 6 ];
+// original value - initial value modifies initial value cumulatively
 var sum = 0;
 for (var n of numbers) sum = sum + n;
 sum += n;
-console.log(sum);
+console.log(numbers, 'numbers array');
+console.log(sum, 'cummulative sum ');
 
 var addAll = numbers.reduce((accumulator, currentValueOfElement) => {
+	console.log(`${accumulator} accValue adder ${currentValueOfElement} elemValue`);
 	return accumulator + currentValueOfElement;
-}, 10);
+}, 3);
+console.log(addAll, 'addAll cumulative, starting from initial value of 3');
+// this is the initial value as the second arg - used in React Hooks, useEffect Hook
 
-const prices = [ 18, 19, 20, 21, 60, 61, 62 ];
-let pricesSum = 0;
-for (let i = 0; i <= 60; i++) {
-	pricesSum += prices[i];
-}
-console.log(pricesSum);
-console.log(prices);
+const multiplyAll = numbers.reduce((accValue, elemValue) => {
+	console.log(`${accValue} accValue multiplier ${elemValue} elemValue `);
+	return accValue * elemValue;
+}, 5);
+console.log(multiplyAll, 'multiply cumulative, starting from initial value of 5');
 
-const prices = [ 18, 19, 20, 21, 60, 61, 62 ];
-let pricesSum = 0;
-for (let i = 0; i < prices.length; i++) {
-	pricesSum += prices[i];
-}
-console.log(pricesSum);
+const divideAll = numbers.reduce((accValue, elemValue) => {
+	console.log(`${accValue} accValue divider ${elemValue} elemValue `);
+	return accValue / elemValue;
+}, 50);
+console.log(divideAll, 'divide cumulative, starting from initial value of 50');
 
-const newPriceSum = prices.reduce((sum, elementValue) => (sum += elementValue), 10);
-console.log(newPriceSum);
+const prices = [ 62, 0, 18, 19, 50, 20, 21, 60, 61, 8 ];
+const priceSum = prices.reduce((sum, elementValue) => (sum += elementValue), 20);
+const updatedPriceSum = prices.reduce((sum, elementValue) => (sum += elementValue), 10);
+
+console.log(prices, 'pricesArray');
+console.log(priceSum, 'priceSum initial value 20');
+console.log(updatedPriceSum, 'upatedPriceSum initial value 10');
 
 const companies = [
 	{ name: 'Company One', category: 'Finance', start: 1981, end: 2003 },
@@ -42,4 +50,4 @@ const totalYears = companies.reduce(
 	(cumulativeValue, elementValue) => cumulativeValue + (elementValue.end - elementValue.start),
 	10
 );
-console.log(totalYears);
+console.log(totalYears, 'Logs cumulative total years of all employees');
