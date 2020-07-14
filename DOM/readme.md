@@ -1,4 +1,4 @@
-## What is the Document Object Model
+## What is the Document Object Model (DOM)?
 
 The DOM is a structured representation of the HTML document as a tree of elements and nodes created by the browser in an object-oriented representation. The document is the HTML document, the model is the node model of all the elements in the HTML document, and the object is the conversion of each of these elements into JavaScript objects.
 
@@ -14,7 +14,7 @@ Reading List:
 [https://en.wikipedia.org/wiki/Document_Object_Model]
 [https://www.digitalocean.com/community/tutorials/introduction-to-the-dom]
 
-## How does JavaScript work with the DOM?
+## How does JavaScript interact with the DOM?
 
 The parent object of the DOM is the window object, followed by the document object, with is an object oriented representation of the HTML elements. 
 
@@ -59,7 +59,7 @@ As these are not hoisted, caching the DOM and declaring them as variables is the
 	body.appendChild(h1);
 	console.log(h1.offsetHeight);
 ```
-## What are JavaScript Events and how do they work with the DOM?
+## What are JavaScript Events and how do they interact with the DOM?
 
 Events are notifications to the code base to do something based on user interaction. They are call back-functions and are called only once all the other functions in the execution stack have been called.
 Multiple events can be fired at the same time due to the asynchronous, single-threaded nature of JavaScript.
@@ -78,7 +78,7 @@ function changeColor() {
 	clickBtn.style.color = 'red';
 }
 ```
-## What is JavaScript event bubbling?
+## What event bubbling?
 
 The event flow in the DOM is from parent to child. Therefore when a parent element has a handler all the children inherit the event and data flow is top downwards. The child elements have no influence on the parent element.
 
@@ -87,4 +87,8 @@ This leads to event bubbling when an event is fired in the DOM.  If you click ev
 In order to prevent this we can use e.stopPropagation() at any point in the DOM tree. Event bubbling is also halted when you specify the event's target and value by using the document object methods that call the API keys of the DOM. 
 
 ## Types of events?
-- Clickevents: one of the most common type of events where functions are written to change the behaviour of an element, or elements, when the user clicks a button, link, area of the screen.
+- Click Events: one of the most common type of events where functions are written to change the behaviour of an element, or elements, when the user clicks a button, link, area of the screen.
+- Mouse Events: where mouse movements are tracked
+- Key Events: key-pad events like keypressed up or down
+- Change-events: In forms where inputs are added by user and the data is controlled by the inputs they type in - text, filters, radio buttons/checkbox/ toggle selections
+

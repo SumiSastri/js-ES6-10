@@ -44,7 +44,7 @@ $(() => {
 		});
 	};
 
-// EDIT WORKING IN PECULIAR FASHION
+	// EDIT WORKING IN PECULIAR FASHION
 	const editProductRecord = (product, tdId, editId) => {
 		let editButton = $(`#${editId}`);
 		console.log(editButton);
@@ -167,12 +167,7 @@ $(() => {
 });
 
 // RESET INPUTS - is this function necissary?
-	// 	const resetInputs = () => {
-	// 		supplierInput.val('');
-	// 		productInput.val('');
-	// }
-
-
-	
-
-
+// 	const resetInputs = () => {
+// 		supplierInput.val('');
+// 		productInput.val('');
+// }

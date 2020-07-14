@@ -35,3 +35,12 @@ let s1 = new Student('Jane', 'Doe', 18);
 console.log('logs s1 x1', s1);
 console.log('logs s1.setFirstName', s1.setFirstName('Freddy'));
 console.log('logs s1 x2', s1);
+
+// spread operator
+
+const combinedP1S1 = {
+	...p1,
+	...s1
+};
+
+console.log(combinedP1S1);

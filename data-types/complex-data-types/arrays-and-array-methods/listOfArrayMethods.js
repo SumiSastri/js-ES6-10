@@ -33,26 +33,13 @@ console.log(scoreTenPoints);
 //adds hashbrowns to the array in the beginning
 shoppingList1.unshift('hashbrowns');
 
-// POP, SHIFT, SPLICE SUPRESS ITEMS
+// POP, SHIFT, SLICE & SPLICE - removing items
 
 //pop removes sausages from the array at the end
 shoppingList1.pop('sausages');
 
 //shift removes bread from the array in the beginning
 shoppingList1.shift('bread');
-
-// SORT & REVERSE ARRANGE ITEMS
-var fruitArray = [ 'Apples', 'Oranges', 'Blueberries', 'Kiwi', 'Mangoes', 'Pineapples', 'Grapes' ];
-fruitArray.sort();
-// sorted in ascending alphabetical order
-// sort is an iterative method as it loops through each item
-// the call back then is to sort each item alphabetically
-// the syntax is fruitArray.sort(thisObject)
-// caps will be sorted first
-// it is not a perfect method and may need a custom function
-
-fruitArray.reverse();
-// sorted in descending alphabetical order
 
 // SLICE AND SPLICE
 var fruitArray = [ 'Apples', 'Oranges', 'Blueberries', 'Kiwi', 'Mangoes', 'Pineapples', 'Grapes' ];
@@ -71,6 +58,19 @@ fruitArray.slice(0, 4);
 // the end is index 6 which is excluded it means upto but not including 6
 // So you will get pineapples as the last item in the array returned
 fruitArray.slice(2, 6);
+
+// SORT & REVERSE ARRANGE ITEMS
+var fruitArray = [ 'Apples', 'Oranges', 'Blueberries', 'Kiwi', 'Mangoes', 'Pineapples', 'Grapes' ];
+fruitArray.sort();
+// sorted in ascending alphabetical order
+// sort is an iterative method as it loops through each item
+// the call back then is to sort each item alphabetically
+// the syntax is fruitArray.sort(thisObject)
+// caps will be sorted first
+// it is not a perfect method and may need a custom function
+
+fruitArray.reverse();
+// sorted in descending alphabetical order
 
 // CONCAT & JOIN BEHAVE VERY DIFFERENTLY
 

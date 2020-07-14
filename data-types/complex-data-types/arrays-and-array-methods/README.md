@@ -68,3 +68,11 @@ console.log(arrayData);
 MDN quick reference [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype]
 w3 quick reference [https://www.w3schools.com/jsref/jsref_obj_array.asp]
 Another useful reference [https://www.dyn-web.com/javascript/arrays/]
+
+### What are Array methods?
+
+Array methods are functions performed on an array. They are in-built into the language. Higher order functions are call-back functions performed on an array. Simple array methods either mutate the array, or keep the original array in tact. ```array.reverse()```, for example mutates the array.
+
+Methods on arrays can be used by factory functions to change data accessed from API's that are in arrays. The data may be in a format that is required in another format in the front end - for example a number may need to be spelt out, therefore an array of numbers will need the ```array.map()``` method to go through each array, and then the ```.toString()``` method to convert it into words and this may then be used as a param in a factory function.
+
+The section on functional programming explores this in greater details. In this section, array methods I have organised array methos as those that access & find data/ add or copy data/ deconstruct the array/ evaluate the array/ remove or delete elements/ sort and organise elements.

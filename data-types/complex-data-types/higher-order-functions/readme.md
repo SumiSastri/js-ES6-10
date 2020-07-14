@@ -1,6 +1,10 @@
 ### Higher Order Functions In JavaScript
 
-The four methods chained and compared
+Higher order functions that return functions (call-back-functions). They can be factory functions
+
+```const createLengthTest = (testLength) => (word) => word.length > testLength;```
+
+OR pre-built in ES-6 to ES-10 - the most frequently used are ```map```, ```filter```, ```sort``` and ```reduce```. The four methods are quickly compared at a high-level below.
 
 ```
 const setAges = [ 18, 19, 20, 21, 60, 61, 62 ];
