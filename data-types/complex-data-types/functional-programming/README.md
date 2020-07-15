@@ -50,7 +50,31 @@ In the file ```functional-way.js``` we see how each set of data is identified, p
 
 Functions are not influenced by any internal or external state. Wheras a function does not work if removed from its class in OOP. The only thing that changes the output of a function are the arguments of the function. The functional approach therefore, although it looks more structured superficially, it actually provides more flexibility and extensibility.
 
+* WHAT IS CURRYING/ PARTIAL APPLICATION?
 
+Partial application is the partial application of a function argument to the function body. If one param is likely to have a fixed output and the others variable outputs, currying or partial application can be used.
+
+The param is isolated and then passed on to a call back function by reference.
+Step 1 isolate the fixed arg - ```console.log(xPartial, 'function declaration');```
+```const xPartial = (x) => (y, z) => add(x, y, z);```
+
+Step 2 create a default value for this arg and assign it to a new variable ```console.log(add5, 'function reassignment');``` The log records this reassignment
+```const add5 = xPartial(5);```
+
+Step 3 create a new variable and run the function call of the first code block passing variables from second code block
+```const add5AndxPartial = add5(16, 77);```
+The final log is the call and reassignment ```console.log(add5AndxPartial, 'function call from add5AndxPartial');```
+
+The final output is the same as declaring this all at the same time. Currying/ partial application means we simply break up the variables and pass them through the code at different times.
+
+This can be done with one or more args being passed at different times.For example, all three args can be passed separatly and partially.
+
+```const xyzPartials = (x) => (y) => (z) => add(x, y, z);``` To call the function, now each arg is reassigned in separate parenthesis ```const addXYZpartials = xyzPartials(29)(16)(18);``` the function is instantly callable.
+
+```
+console.log(xyzPartials, 'function declaration');
+console.log(addXYZpartials, 'function call from addXYZpartials');
+```
 
 ## ES-Lint and Functional Programming
 npm install --save-dev es-lint
