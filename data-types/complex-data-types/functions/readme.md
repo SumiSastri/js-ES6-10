@@ -12,11 +12,85 @@ Steps to create a function: -
 
 1. Function declaration 
 
-There are 2 types of declaration - anonymous and named. The purpose of the declaration is to store the temporary value of the function logic. When you log such a function, you will get the function name and the function prototype declared.
+There are 2 types of declaration - anonymous and named. The purpose of the declaration is to store the temporary value of the function logic. When you log such a function, you will get the function name and the function prototype declared. Function declaration makes the function available to your programme. When the function name is optional it is called an anyonmous function.
 
-2. Function call
+Syntax:
+As seen below should name the function, have named or implicit parameters - parameter args act like local variables. They are only available to the function that they are defined in. This known as function scope. Params give the function the ingredients that make them more flexible.Params are comma separated and enclosed in parenthesis. If they hold an array or object, the square brackets and curly braces are used inside the parenthesis. Params are not essential, empty-void functions that do not return anything are also possible. 
+
+The function body, is the series of statements, instructions or subprocedures that you want the code-block to follow.
+
+The function body must explicitly or implicitly return something. The return statement is read by browsers and indicate to browsers that this is when the code block stops executing. 
+
+```
+function nameOfFunction(param1, param2) {
+ return functionBody
+}
+```
+The ```return()``` method in a function is a method, as a function is an object. The return method in turn is a function, therefore return statements can return functions.
+
+Therefore it can return a series of comma-separated params
+```
+function celciusConvertor(farenheit) {
+	return console.log(farenheit), console.log(this), 5 / 9 * (farenheit - 32), console.log(arguments);
+}
+
+console.log('traditional invocation', celciusConvertor(100));
+```
+You will get the global object when you log ```this``` and 2 arguments in an array-like object ```[Arguments] {'0': 100}``` - where 0 is the object key and 100 is its value. This is why you can use the ```Object.keys()``` method, as the object that is being referred to is the global object and all its methods.
+
+2. Function call or invocation.
 
 For a function to be used, it needs to be called, under the hood in ES-5 calling is a method performed on the function object. The function calls the declared function with the arguements performed by the params of the function body. Functions need to be explicitly called or invoked to reterieve the value returned from the block of code. Functions can be called anytime in the code block - in the console by developers to check code or by the end-user when they clicks a button in a front-end application.
+
+The difference between the use of the word call and invoke is calling is only for named functions, invocation is for anonymous functions. Calling a function in the call-stack involves calling the args/ params and the ```this``` key word.
+
+Calling a function stops the execution of the function.
+
+There are 4 ways of calling functions.
+
+i) Traditional call/ invocation
+
+```
+function celciusConvertor(farenheit) {
+	return 5 / 9 * (farenheit - 32);
+}
+console.log(celciusConvertor, 'function declaration');
+console.log('traditional invocation', celciusConvertor(77));
+```
+
+Here we see the function invoked in the traditional method. The ```this``` key word is bound to the global window object.
+
+ii)  As a method - method invocation
+
+As a function within an object, the functions written within the objects are called methods. They are always anonymous functions because the key-value pair notation of object means that the key is the identifier and the value is the method declared. This is more flexible and the outcome of the binding of the this key word to the object it is pointing to makes the functions more reusable.
+
+```
+const ownerName = {
+	firstName: 'Jack',
+	lastName: 'Jones',
+	phoneNumber: 12345,
+	fullName: function(firstName, lastName) {
+		return (
+			console.log(this, 'logs this - which is the object not the global object'),
+			console.log(arguments, 'logs args'),
+			console.log(this.firstName + this.lastName, 'logs names as set by the object literal'),
+			console.log(this.phoneNumber, 'identifies this as the object key-value pair'),
+			this.firstName + this.lastName
+		);
+	}
+};
+
+console.log(ownerName, 'object definition returned not the global object');
+console.log(ownerName.fullName('Albert', 'Pinto'));
+```
+Function is invoked or called using the object dot-notation and the binding of the ```this``` key-word happens at invocation time. This is a flexible and extensible programming technique. It makes the ```this``` arguement more relevant and reusable.
+
+iii) In a constructor - constructor invocation
+
+Constructing an object in an object is construction, the constructor that creates the new object does so by the use of the ```new``` key word.
+
+iv) With the call, apply and bind methods
+
 
 3. Function apply
 
@@ -28,16 +102,25 @@ The logic is now bound to the function it is declared to and is run
 
 These steps are now performed by transpilers in ES-6 under the hood. 
 
-Syntax:
-As seen below should name the function, have named or implicit parameters - parameter args act like local variables they make the function more flexible - the function body must explicitly or implicitly return something this is when the code block stops executing.
-
-```
-function nameOfFunction(param1, param2) {
- return functionBody
-}
-```
-
 The fat arrow, implicitly calls and binds the function output to the function inputs and declaration. For example, a named function is used in ES6 with the fat-arrow syntax. ```variable functionName = (params) => {function body}``` parses the lamda function, calls it, applies it and binds it in a shorter, more efficient run time as the transpiling is happening pre-build. The code is transpiled to
+
+**FUNCTION DEFINITION, FUNCTION EXPRESSION, FUNCTION DEFINITION EXPRESSION, FUNCTION LITERALS, ANONYMOUS FUNCTIONS, LAMDA FUNCTIONS**
+
+Confusingly an anonymous function means a function that simply does not use the keyword ```function``` in the naming convention. The function still has a name, so in reality, calling it an anonymous function is a bit of a misnomer.
+
+It is also referred to as function definition, function expression, function definition-expression, funtion literal. When using the fat-arrow function, it is called a lambda function.
+
+Function literals are more useful and flexible compared with function declaration. While names can be useful, especially dealing with recursion. 
+```
+const calculateFarenheit = celsciusConvertor(params) =>{ function body};
+```
+Assigning a function to a variable means you can use it anywhere that a variable will go. Then call it or use it like a variable passing it by value.
+
+You can also immediately invoke the function by adding parenthesis to the end of the function body, with immediately called params. This is referred to immediate intialisation of the function, or immediate intantiation.
+
+```
+const calculateFarenheit = celsciusConvertor(params) =>{ function body}(30)
+```
 
 #### What are pure functions
 Pure functions are also called first class functions as they return the same output every single time. A more detailed walk through in the functional programming section. They are functions that are not  influenced by any internal or external state. Functions in object-oriented-programming in JavaScript are influenced by the data in the object's constructor state.
@@ -108,4 +191,5 @@ variable functionName =(() => {
 
 ## What is currying?
 - Curried functions - function returns more than 1 call back function
+
 

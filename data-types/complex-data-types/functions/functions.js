@@ -49,3 +49,43 @@ const calcProduct = (x, y) => x * y;
 
 console.log(calcProduct, 'logs declaration');
 console.log('function call', calcProduct(100, 2));
+
+function celciusConvertor(farenheit) {
+	return 5 / 9 * (farenheit - 32);
+}
+console.log(celciusConvertor, 'function declaration');
+console.log('traditional invocation', celciusConvertor(77));
+
+function celciusConvertor(farenheit) {
+	return console.log(farenheit), console.log(this), 5 / 9 * (farenheit - 32), console.log(arguments);
+}
+
+console.log('traditional invocation', celciusConvertor(100));
+
+const ownerName = {
+	firstName: 'Jack',
+	lastName: 'Jones',
+	phoneNumber: 12345,
+	fullName: function(firstName, lastName) {
+		return (
+			console.log(this, 'logs this - which is the object not the global object'),
+			console.log(arguments, 'logs args'),
+			console.log(this.firstName + this.lastName, 'logs names as set by the object literal'),
+			console.log(this.phoneNumber, 'identifies this as the object key-value pair'),
+			this.firstName + this.lastName
+		);
+	}
+};
+
+console.log(ownerName, 'object definition returned not the global object');
+console.log(ownerName.fullName('Albert', 'Pinto'));
+
+// ECMA 6 - ALWAYS ANONYMOUS FUNCTIONS
+// Arrow functions allows a short syntax for writing function expressions.
+// You don't need the function keyword, the return keyword, and the curly brackets
+// The fat arrow replaces curly braces and const replaces the word function
+// Return is implicit and does not need to be named
+// They can NOT be hoisted
+// For stack tracing and debugging name the const
+// No need to bind this with an arrow function
+// Especially useful for map, reduce filter in React
