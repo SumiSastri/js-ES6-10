@@ -65,6 +65,34 @@ Using dot notation, a new prop can be added ```dog.favouriteToy = 'rag doll';```
 By using dot notation you can access the the prop and update the value by reassigning the value as you would with a variable ```dog.name = 'Toulouse';```
 - Permanantly delete existing props - delete is a key word and should be used sparingly. Once deleted a prop can not be retrieved. It is best practice to reserve this method only for static props not methods in a prop. If used on a predefined JavaScript object that has been encapsulated & instantiated, the application can crash. Like all other methods, it simply requires you to use the delete key word and dot notation, the prop - key and value will be deleted permanently ```delete dog.favouriteToy;```
 
+
+### CHECKING PROPS
+The ```hasOwnProperty``` method checks the props of the object in a strict boolean check returning the value only if one exists. The param checkProp must be passed a string.
+```
+function checkDog(checkProp) {
+	if (dog.hasOwnProperty(checkProp)) {
+		return dog[checkProp];
+	} else {
+		return 'Not a valid property for your dog object';
+	}
+}
+
+function checkPrimate(checkProp) {
+	if (primate.hasOwnProperty(checkProp)) {
+	}
+}
+
+<!-- note the property must be declared in the param as a string -->
+console.log('boolean check checkDog(checkProp) LOGGED TRUE', checkDog('species'));
+console.log('boolean check checkDog(checkProp) LOGGED FALSE', checkDog('clown'));
+
+<!-- OUTPUT -->
+boolean check checkDog(checkProp) LOGGED TRUE phyllum cordata
+boolean check checkDog(checkProp) LOGGED FALSE Not a valid property for your dog object
+```
+
+### GETTERS AND SETTERS
+
  ## WHAT DOES THE this KEYWORD MEAN?
 
 The ```this``` key word is important in an object because it is an unordered list, with an array the element index provides specific reference.
@@ -101,7 +129,86 @@ Harry logs musician first name - implicit binding of THIS.MUSICIAN
 
 ## Objects within objects - the constructor as a blueprint?
 
-Everything can be converted into an object with prototypal inheritance including primitive data types.
-```var number = new Number()```, variables are also objects ```var dogName = "Scooby"``` if you log ```this.dogName``` you will get "Scooby" - this is returned from the global object.
+You can create duplicates of an object with the constructor method. The constructor method is a blueprint that allows you to creates a duplicate of the object with the ```new``` key word.
 
- 
+The new object has different values for the same keys in the prop.
+
+The first step is to encapsulate all the information in the constructor. The naming convention of a constructor, is with Upppercase.
+
+```
+const Dog = function() {
+	let name, breed;
+};
+```
+Once the constructor function has been declared - the function returns the variables that are going to be used in the duplicate object, you need to create a new instance of the object with the function params.
+
+```
+d1 = new Dog();
+d1.name = 'Kaiser';
+d1.breed = 'German Shepherd';
+
+d2 = new Dog();
+d2.name = 'Ginger';
+d2.breed = 'German Shepherd';
+
+console.log(d1);
+console.log(d2);
+console.log(d1.name, d1.breed);
+console.log(d2.name, d2.breed);
+
+<!-- OUTPUT -->
+Dog { name: 'Kaiser', breed: 'German Shepherd' }
+Dog { name: 'Ginger', breed: 'German Shepherd' }
+Kaiser German Shepherd
+Ginger German Shepherd
+```
+
+The implicit binding of ```this``` to the 2 instances of the dog provides you the 2 different instances of the object with different information. Each instance has its own props with different values but the same keys.
+
+If we log the ```this``` key word in the constructor, we see 2 instances of empty objects and the prototypal inheritance.
+
+```
+const Dog = function() {
+	let name, breed;
+	return console.dir(this);
+};
+<!-- OUTPUT -->
+Dog {}
+Dog {}
+```
+ ## What's the difference between a constructor and a class?
+
+- Objects encapsulate and intantiate one object
+- Constructors encapsulate one object with the power to intantiate many objects
+- Classes are functions with custom constructors 
+Additional Reading:
+[https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e]
+
+```
+class Vehicle {
+	constructor(make, model, color, numberOfDoors, fullTank, distanceOnFullTank) {
+		this.make = make;
+		this.model = model;
+		this.color = color;
+		this.numberOfDoors = numberOfDoors;
+		this.fullTank = fullTank;
+		this.distanceOnFullTank = distanceOnFullTank;
+	}
+
+	fuelConsumption() {
+		return this.fullTank / this.distanceOnFullTank;
+	}
+}
+
+const fastCar1 = new Vehicle('Maserati', 'GranCabrio A6 1500', 'red', 2, 20, 125);
+```
+
+
+
+
+
+
+
+
+ Everything can be converted into an object with prototypal inheritance including primitive data types.
+```var number = new Number()```, variables are also objects ```var dogName = "Scooby"``` if you log ```this.dogName``` you will get "Scooby" - this is returned from the global object.
