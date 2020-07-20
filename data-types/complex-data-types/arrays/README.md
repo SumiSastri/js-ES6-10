@@ -1,4 +1,4 @@
-### What are arrays
+### What are arrays?
 
 Arrays in JS are also known as indexed collections. The index is the key starting from zero and the value is the item in the array that corresponds to the key. The key and value are tightly coupled.
 

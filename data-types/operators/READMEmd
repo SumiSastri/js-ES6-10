@@ -1,0 +1,10 @@
+// OPERATORS
+// maths operators exceptions - x is not multiply it is the asterisk *
+// equals = is an evaluator, equal to is == and strictly equal to is ===
+// the plus sign is a maths operator as well as used to concat strings
+// the percentage sign is modulus - or division remainder
+//  ++ is increment -- is decrement
+// += add to the previous number x +=y means x = x+y
+// all maths operators -= *= /= and %= can be used in the same way
+//  the bang is not equals to !=
+// the question mark evaluates is this strictly true or false

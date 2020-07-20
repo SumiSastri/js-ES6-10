@@ -28,6 +28,40 @@ document.querySelector('#nameOfId')
 document.querySelector('.nameOfClass')
 
 ```
+Once you access the id you access the inner.HTML method and pass a function to change its behaviour.
+```document.getElementById('nameOfId').innerHTML = function()``` The same applies to when you target the attributes - name, value, class of the element.
+
+For example ```document.getElementById('nameOfId').innerHTML = multiply2();```
+
+Here the function declaration is in the JavaScript code and the function invocation is in the inner HTML or the element that we have selected. When the user therefore types in 2 numbers in the form the html element which we create
+for, they are typing in the params of the function, the output of the function, which is the answer is the function call of these 2 params that get executed.
+
+So the HTML would look like this
+
+```
+<form>
+First number
+	<input type="number" name="quantity">
+  			+
+    <input type="number" name="quantity">
+Second number
+       =
+    <input type="number" name="quantity" Id="answer">
+</form>
+```
+
+The JavaScript file imported into HTML
+```
+function multiply2(a, b){
+ 	return a*b
+ }
+ multiply2(5,6)
+```
+
+And to display it DOM element and its ID would be accessed
+
+``` document.getElementById("answer").innerHTML = multiply2()```
+
 
 2. Access of the multiple elements & the node-list: Using the above methods returns ONLY a single element or single node. When there are nested elements the methods used to access these elements ALWAYS return an array of objects and array methods can be used to access the individual items in the element or node list. 
 
@@ -59,6 +93,8 @@ As these are not hoisted, caching the DOM and declaring them as variables is the
 	body.appendChild(h1);
 	console.log(h1.offsetHeight);
 ```
+5. You can also delete the page with ```document.()``` - deletes all html so only used for testing
+
 ## What are JavaScript Events and how do they interact with the DOM?
 
 Events are notifications to the code base to do something based on user interaction. They are call back-functions and are called only once all the other functions in the execution stack have been called.
@@ -92,3 +128,6 @@ In order to prevent this we can use e.stopPropagation() at any point in the DOM 
 - Key Events: key-pad events like keypressed up or down
 - Change-events: In forms where inputs are added by user and the data is controlled by the inputs they type in - text, filters, radio buttons/checkbox/ toggle selections
 
+## Critical render path and HTML doc set up
+
+To output JavaScript function on a HTML page script tags need to be added. Where the script tags are placed are important as the script will get executed or not if it is not referenced correctly.
