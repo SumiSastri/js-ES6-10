@@ -1,8 +1,32 @@
-## What are objects?
 
-Definition: Collection of data - strings, booleans, numbers (properties) and functions (methods)
+## What is prototypal inheritance and the prototype chain?
+ 
+Prototypal inheritance means you can base the functionality of an object based on another object. At the top of the prototype-chain is the object prototype. From this object prototype, everything can be converted into an object. To test this out with the variable, ```const dogName = "Scooby"``` if you log ```this.dogName``` you will get "Scooby" - this is returned from the global object, which is the object prototype.
 
-Objects are an unordered list of key-value pairs or properties or name-value pairs. Keys/Names of the property they  describe the values they hold. Values can be any data type - strings, numbers, booleans, arrays, objects and functions. Keys and values are separated by colons.  This is the difference between props, prop names and prop values.
+Documentation [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain]
+
+```object.prototype``` is at the head of the prototype chain. The other 8 prototypes are:-
+
+```array.prototype```/```string.prototype```/```number.prototype```/```boolean.prototype```/```date.prototype```/```function.prototype```/```error.prototype```/```regEx.prototype```
+
+ Prototypes are not to be confused with the primitive / literals:-
+"" (empty strings, or strings with values)
+9  (a number as a number)
+true || false  (as booleans)
+{} (empty objects)
+[] (empty arrays)
+() => or function (){} (as empty functions)
+/()/ (empty regEx)
+
+```Math()``` is not on the list, it is a global object and is formed by a global Math constructor. You can assign new Object to a variable ```var car = new Object()``` You can not assign ```Math()``` with the new key word to a variable. They inherit all the properties and methods in the ```Math()``` constructor. To access these properties ```Math.round()``` this refers to the constructor state.
+
+## So what are objects created by the object.prototype?
+
+Documentation [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object]
+
+Objects are a collection of data - strings, booleans, numbers (properties) and functions (methods) that are created by the object prototype. Everything in JavaScript is an object as we have seen above. Each object prototype is a function that creates the other complex data-types - Arrays, Functions, Dates, Errors.
+
+Fundamentally, objects literals, that are created from the object.prototype, are an unordered list of key-value pairs or properties or name-value pairs. Keys/Names of the property they  describe the values they hold. Values can be any data type - strings, numbers, booleans, arrays, objects and functions. Keys and values are separated by colons.  This is the difference between props, prop names and prop values.
 
 ```
 var dogName ={
@@ -15,8 +39,6 @@ property names - name & breed -->
 ```
 
 The variety of data types that the object can hold makes them the most versatile of data-types in JavaScript. When a function is called from an object, it is called a method. 
-
-In JavaScript all complex data-types are considered to be objects - dates, Math methods, functions, reg-ex's, arrays. Therefore all functions are methods and that is why we see the terms used interchangeably. Arrays and functions in JavaScript are created by prototypes from the global object. This is why arrays have array methods and in functions, the return statement is a method.
 
 - Props of objects are readable, writable and configurable. 
 - They can be changed with the get and set methods
@@ -59,12 +81,14 @@ const dog = {
 ```
 ### Using objects
 You can add, update and delete props in an object. 
+
 - Adding props
 Using dot notation, a new prop can be added ```dog.favouriteToy = 'rag doll';``` If you log the object again, the new prop will be added. 
+
 - Updating existing props
 By using dot notation you can access the the prop and update the value by reassigning the value as you would with a variable ```dog.name = 'Toulouse';```
-- Permanantly delete existing props - delete is a key word and should be used sparingly. Once deleted a prop can not be retrieved. It is best practice to reserve this method only for static props not methods in a prop. If used on a predefined JavaScript object that has been encapsulated & instantiated, the application can crash. Like all other methods, it simply requires you to use the delete key word and dot notation, the prop - key and value will be deleted permanently ```delete dog.favouriteToy;```
 
+- Permanantly delete existing props - delete is a key word and should be used sparingly. Once deleted a prop can not be retrieved. It is best practice to reserve this method only for static props not methods in a prop. If used on a predefined JavaScript object that has been encapsulated & instantiated, the application can crash. Like all other methods, it simply requires you to use the delete key word and dot notation, the prop - key and value will be deleted permanently ```delete dog.favouriteToy;```
 
 ### CHECKING PROPS
 The ```hasOwnProperty``` method checks the props of the object in a strict boolean check returning the value only if one exists. The param checkProp must be passed a string.
@@ -93,7 +117,7 @@ boolean check checkDog(checkProp) LOGGED FALSE Not a valid property for your dog
 
 ### GETTERS AND SETTERS
 
- ## WHAT DOES THE this KEYWORD MEAN?
+## WHAT DOES THE this KEYWORD MEAN?
 
 The ```this``` key word is important in an object because it is an unordered list, with an array the element index provides specific reference.
 
@@ -202,13 +226,3 @@ class Vehicle {
 
 const fastCar1 = new Vehicle('Maserati', 'GranCabrio A6 1500', 'red', 2, 20, 125);
 ```
-
-
-
-
-
-
-
-
- Everything can be converted into an object with prototypal inheritance including primitive data types.
-```var number = new Number()```, variables are also objects ```var dogName = "Scooby"``` if you log ```this.dogName``` you will get "Scooby" - this is returned from the global object.

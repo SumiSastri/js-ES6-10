@@ -62,6 +62,7 @@ function celciusConvertor(farenheit) {
 
 console.log('traditional invocation', celciusConvertor(100));
 
+// function invocation from a method
 const ownerName = {
 	firstName: 'Jack',
 	lastName: 'Jones',
@@ -80,12 +81,4 @@ const ownerName = {
 console.log(ownerName, 'object definition returned not the global object');
 console.log(ownerName.fullName('Albert', 'Pinto'));
 
-// ECMA 6 - ALWAYS ANONYMOUS FUNCTIONS
-// Arrow functions allows a short syntax for writing function expressions.
-// You don't need the function keyword, the return keyword, and the curly brackets
-// The fat arrow replaces curly braces and const replaces the word function
-// Return is implicit and does not need to be named
-// They can NOT be hoisted
-// For stack tracing and debugging name the const
-// No need to bind this with an arrow function
-// Especially useful for map, reduce filter in React
+// function invocation from a method

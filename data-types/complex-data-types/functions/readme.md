@@ -1,6 +1,8 @@
 ## What are functions?
 
-Functions are objects with logic in the function body. In JavaScript everything is an object including functions and arrays.
+Functions are objects with logic in the function body. Functions are created by the ```function.prototype``` - which is a function with methods. Documentation [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function]
+
+Therefore all functions, as instances of the ```function.prototype()``` are methods and that is why we see the terms used interchangeably.  The return statement is a method of the ```function.protoype```
 
 The function body are a series of logical statements for the code block to perform. It is therefore a block of code designed to peform a particular task. It makes programming modular and scalable. Functions in other languages are called subroutines or procedures. Data types that a function can mutate are
  - Primitives - strings, numbers as well as complex-data-types
@@ -8,7 +10,11 @@ The function body are a series of logical statements for the code block to perfo
 
 Mutation happens with the use of conditionals and boolean evaluation. As a function is an object under the hood it is performing a call, apply and bind method written to the global function prototype.
 
-Steps to create a function: - 
+## What is a function statement?
+
+Function statements are the series of statements or logical blocks written into the function body for the code to be executed. Programs are a list of steps/ instructions/ protocols that the computer needs to follow to execute code. The function body provides them with these steps. These steps are called statements and with js-html-css the browser parses these statments to execute the code block. Statements are executed one by one in order of the way they are called in the call-stack. The semicolon in js tells the browser one statement is over and to execute the next, syntax also indicates to the browser's inbuilt JavaScript engines how to deal with the code written.
+
+## Steps to create and use a function
 
 1. Function declaration 
 
@@ -46,7 +52,7 @@ The difference between the use of the word call and invoke is calling is only fo
 
 Calling a function stops the execution of the function.
 
-There are 4 ways of calling functions.
+**Four ways to call/ invoke functions**
 
 i) Traditional call/ invocation
 
@@ -87,18 +93,51 @@ Function is invoked or called using the object dot-notation and the binding of t
 
 iii) In a constructor - constructor invocation
 
-Constructing an object in an object is construction, the constructor that creates the new object does so by the use of the ```new``` key word.
+Constructing an object in an object is construction, the constructor that creates the new object does so by the use of the ```new``` key word. All the methods defined in  the constructor can be called in each instance of the new objects created.
 
-iv) With the call, apply and bind methods
+Constructors are anonymous functions that return new objects.  The function creates a new instance of the object that has been encapsulated and assigned to a variable. 
 
+```
+<!-- function declaration in the encapsulation -->
+const Dog = function() {
+	let name, breed;
+	return console.dir(this);
+};
 
-3. Function apply
+<!-- Invocation of the function as a constructor with the new key word  -->
+d1 = new Dog();
+d1.name = 'Kaiser';
+d1.breed = 'German Shepherd';
 
-The logic that has been called now has to be applied to the function declared and called, this is performed by the apply method on the function prototype.
+d2 = new Dog();
+d2.name = 'Ginger';
+d2.breed = 'German Shepherd';
 
-4. Function bind
+console.dir(d1);
+console.log(d2);
+console.log(d1.name, d1.breed);
+console.log(d2.name, d2.breed);
+```
+The ```this``` key word binds the function to the object and therefore on calling the function the output is different for both intances of the object created by the constructor. A more detailed description is in the objects section.
 
-The logic is now bound to the function it is declared to and is run
+```
+Dog { name: 'Kaiser', breed: 'German Shepherd' }
+Dog { name: 'Ginger', breed: 'German Shepherd' }
+Kaiser German Shepherd
+Ginger German Shepherd
+```
+
+iv) With the call, apply and bind methods in classes 
+
+**INDIRECT INVOCATION**
+
+3. Function apply 
+
+The logic that has been called, a value is provide. Now has to be applied to the function declared and called, this is performed by the apply method on the function prototype. Apply returns an array.
+
+4. Function bind 
+
+The logic is now bound to the function it is declared to and is run.
 
 These steps are now performed by transpilers in ES-6 under the hood. 
 
@@ -121,31 +160,13 @@ You can also immediately invoke the function by adding parenthesis to the end of
 ```
 const calculateFarenheit = celsciusConvertor(params) =>{ function body}(30)
 ```
+## ES6 Functions - or arrow functions
+Arrow functions allows a short syntax for writing function expressions. They provide efficiency in run time. You don't need the function keyword, the return keyword, and the curly brackets. Functions are always anonymous functions or assigned to a variable. The return method is implict and in short functions, parenthesis for the params, curly braces for the return statement and the return key word can all be omitted.
+
+The ```let``` and ```const``` are transpiled back into ```var```. As arrow functions are assigned to ```let``` or ```const``` key words, by definition, they too can not be hoisted. For stack tracing and debugging ```const``` is always the better option. There is no need to call and bind the this key word with an arrow function as the fat arrow calls and binds the function to the object it is pointing to.
 
 #### What are pure functions
 Pure functions are also called first class functions as they return the same output every single time. A more detailed walk through in the functional programming section. They are functions that are not  influenced by any internal or external state. Functions in object-oriented-programming in JavaScript are influenced by the data in the object's constructor state.
-
-#### What is a function statement?
-Function statements are the series of statements or logical blocks written into the function body for the code to be executed. Programs are a list of steps/ instructions/ protocols that the computer needs to follow to execute code. The function body provides them with these steps. These steps are called statements and with js-html-css the browser parses these statments to execute the code block. Statements are executed one by one in order of the way they are called in the call-stack. The semicolon in js tells the browser one statement is over and to execute the next, syntax also indicates to the browser's inbuilt JavaScript engines how to deal with the code written.
-
-#### Why is code readability important?
-Making code readable improves efficiency. Statements can be broken with the semicolon or operators. If a statement is more than 80 characters it is recommended to use breaks. Curly braces show a list of code block to be executed together ```{ }```. For namespaces to start with a number, for example browsers will try to parse (read) it as a number rather than a naming convention. Browser engines are also case sensitive, therefore ```nameOfFunction``` and ```nameoffunction``` will be read as 2 different identifiers and code breaks/ has unintended side-effects. Similarly ```id``` , ```iD``` & ```ID``` are three different name spaces. Hypens will be read as subtraction signs. Each language has its own naming conventions, lower camelCase is preferred as the first alphabet in upper case, denotes the namespace belongs to the class keyword. Similarly commas separate variables, semi-colons statements or one line of code. Browsers stop running the code when they reaches the return statement. For all these reasons code readability and the right syntax are important.
-
-#### Why is the call stack and critical render path?
-
-The critical render path is how browser engines read different languages - HTML, CSS and JavaScript and the order they are read in is the call stack. HTML is parsed first, then CSS and then JavaScript.
-
-JavaScript being a loosely typed language - stores variables that can be changed - asynchronous and single-threaded means that browsers parse the language in the most convenient order in the call stack. 
-
-The Document Object Model (DOM), which is a copy of the node-tree on a webpage,  queries HTML and CSS and returns an object which then can be mutated. JavaScript accesses the DOM and then is run on each node. When using vanilla JavaScript, it is required to put the scripts between body and html for set up so that the browser can parse the script. With JavaScript libraries, the MVC (model-view-control) method is used to access the DOM via a virtual DOM. The method of access to the DOM depends on the library - jQuery, React-js, Node-js are library dependencies that access the DOM in different ways.
-
-The browser complies code first by looking at the syntax (lexical compliation)
-- if it detects syntax errors and the code does not run
-- if it detects blocks of code in the function - conditionals, loops, variables etc., then it looks at the scope of the function and what is within and what is referenced
-- then in the browser memory, it runs the new code and stores it in the window object
-- by default all code is in the window scope therefore window.alert() can be called anywhere. (go to console type window to check root scope)
-- Since the DOM is an internal API you have the traditional API calls
-```get``` which is the ```getElement``` function. Once the data has been fetched by the DOM API, you can perform other methods available from the DOM-API ```setAttribute = post``` or ```removeElement = delete``` For example, ```-getElementsByTagName() - setAttribute() - removeElementById();``` are all the DOM-API methods.
 
 ## ES-6 call-backs vs. Promises
 A call back is executed when one function calls another function. Map,filter and reduce are call-back functions. There is a synchronous nested functionality where one code block has to run before the other can be executed and can lead to what was known as "call-back-hell" or "the pyramid-of-doom". It was also dependent on several conditional statements
