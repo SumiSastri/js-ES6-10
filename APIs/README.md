@@ -533,3 +533,6 @@ npm init -y (default values)
 Meta-data in package JSOn - (set entry point - scripts.js)
 npm install -g  nodemon express cors dotenv path body-parser (server dependencies)
 npm install -g  mongoose mongodb (database dependencies)
+
+Simple server
+```npm install http-server -g``` where -g installs the package globally. Now, if you run into errors like this, you may need to use sudo to install this package. To do so, you use the same command but you type sudo  ```npm install http-server -g``` and you type in your login password for your laptop, and then I have a good install. Once that install is complete, you can use the command ```$ http-server``` to start a server that serves the files in the current directory, and then when you're done, just press Ctrl+C and you're back to the bash prompt```$```.
